@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js">      
+    </script> 
+</head>
+<body>
+   <button id="regbtn"  name="regbtn">Register form</button>
+   <div id='mainDiv'>  
+    <div id='div1'>   
+    <form method="GET"> 
+          <ul>      
+          <li> <h1>Member Login</h1></li>
+           <li> <input type="text" placeholder="Username" class="stInput_1"> </li>
+            <li><input type="password" placeholder="Password" class="stInput_1"> </li>
+            <li><button type="submit" id="submit" name="submit">Login</button></li>
+            <li><label><a href="">Forgot password?</a> </label> </li> 
+            </ul>       
+   </form> 
+   </div>
+   </div>
+   <script type="text/javascript">
+       $(function(){
+          $('#regbtn').click(function(){
+            $('#mainDiv').fadeIn('slow');
+            });
+           $('#submit').click(function(){
+              $('#mainDiv').fadeOut('slow');
+               return false;
+            }); 
+            
+            $(document).keydown(function(e){
+                e.stopPropagation();
+              if(e.keyCode===27) {
+                    $('#mainDiv').fadeOut('slow');
+            }
+            }); 
+       $('#mainDiv').click(function(e){
+               
+              if($(e.target).closest('#div1').length==0) {
+                    $(this).fadeOut('slow');
+            }
+            }); 
+            
+       });
+    </script>
+  
+</body>
+</html>
